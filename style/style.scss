@@ -1,0 +1,740 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap');
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #bbb;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #032924;
+
+  &:hover {
+    background-color: #07554b;
+  }
+}
+
+$green: #149383;
+
+* {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-bar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  background-color: #eee;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 3;
+  padding: .9rem 0;
+  font-size: 1.1rem;
+
+  .logo {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-list {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    align-items: center;
+
+    &-item {
+      display: flex;
+      align-items: center;
+
+      a {
+        text-decoration: none;
+        color: black;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .mobile-menu-btn {
+    display: none;
+  }
+}
+
+.home {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  background-color: #149383;
+
+  &-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &-header {
+      font-size: 40px;
+      font-weight: 700;
+
+      &-small {
+        font-weight: normal;
+        font-size: 1.2rem;
+      }
+    }
+
+    &-footer {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 15px;
+
+      a {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 10px rgb(0, 0, 0, .6);
+        transition: all .2s;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+
+        svg {
+          margin-left: 1px;
+          width: 30px;
+          height: 30px;
+          color: white;
+        }
+      }
+
+      .lin {
+        background-color: #0A66C2;
+      }
+
+      .git {
+        background-color: #171515;
+      }
+    }
+  }
+
+  &-right {
+    width: 320px;
+    height: 320px;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    background-image: url("../pic/noval.jpg");
+    background-size: 110%;
+    background-position: -20px -25px;
+  }
+}
+
+.about {
+  transition: all .3s;
+  background-color: #ddd;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  padding: 70px 0;
+  font-size: 1.1rem;
+
+  &-header {
+    font-size: 40px;
+    font-weight: 1000;
+
+    .gr {
+      color: #149383;
+    }
+  }
+
+  &-content {
+    width: 75vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+
+    &-pic {
+      img {
+        width: 400px;
+        border-radius: .2rem;
+        box-shadow: 0 0 10px rgb(0, 0, 0, .6);
+      }
+    }
+
+    &-right {
+      display: flex;
+      flex-direction: column;
+      align-self: flex-start;
+      gap: 20px;
+
+      .current-skills {
+        .techs {
+          margin-top: .5rem;
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          flex-wrap: wrap;
+
+          span {
+            cursor: pointer;
+            padding: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            box-shadow: 0 0 10px -2px rgb(0, 0, 0, .5);
+            border-radius: 10rem;
+            transition: all .2s;
+
+            &:hover {
+              transform: scale(1.1);
+            }
+
+            img {
+              width: 30px;
+            }
+          }
+
+        }
+      }
+    }
+  }
+}
+
+.work {
+  padding: 70px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  background-color: #149383;
+  font-size: 1.1rem;
+
+  &-header {
+    font-size: 40px;
+    font-weight: 1000;
+
+    .wht {
+      color: #ddd;
+    }
+  }
+
+  &-content {
+    width: 75vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    .project {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      gap: 1rem;
+      background-color: #ddd;
+      padding: 1rem;
+      border-radius: 1rem;
+      height: fit-content;
+
+      &-name {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+        font-size: 1.2rem;
+        font-weight: 1000;
+      }
+
+      &-explain {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .describe {
+          text-align: justify;
+        }
+
+        .project-link {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+
+          a {
+            color: black;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            padding: 5px 10px;
+            gap: 5px;
+            border-radius: 5px;
+            background-color: rgb(255, 255, 255, .7);
+            box-shadow: 0 0 10px -2px rgb(0, 0, 0, .3);
+            transition: all .2s;
+          }
+        }
+      }
+
+      &-img {
+        width: 60%;
+        display: flex;
+
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 1rem;
+          box-shadow: 0 0 10px -2px rgb(0, 0, 0, .5);
+        }
+      }
+
+      &:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+}
+
+.contact {
+  padding: 70px;
+  background-color: #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+
+  &-header {
+    font-size: 40px;
+    font-weight: 1000;
+
+    .gr {
+      color: #149383;
+    }
+  }
+
+  &-content {
+    display: flex;
+    background-color: #eee;
+    border-radius: 10px;
+    gap: 20px;
+    padding: 40px;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      justify-content: center;
+
+      div {
+        position: relative;
+
+        svg {
+          position: absolute;
+          left: 13px;
+          top: 10px;
+        }
+
+        input,
+        textarea {
+          border-radius: 5px;
+          padding: 10px;
+          font-size: 17px;
+          width: 100%;
+          outline: none;
+          border: 2px solid #149383;
+          padding-left: 44px;
+          background-color: #eee;
+          transition: all .2s;
+          resize: none;
+
+          &:hover {
+            background-color: #ddd;
+          }
+        }
+      }
+
+      .email {
+        svg {
+          top: 11px;
+        }
+      }
+
+      button {
+        display: flex;
+        align-items: center;
+        border-radius: 5px;
+        background-color: #149383;
+        padding: 10px;
+        padding-right: 44px;
+        border: none;
+        font-size: 17px;
+        gap: 5px;
+        cursor: pointer;
+        align-self: flex-end;
+        position: relative;
+
+        svg {
+          right: 15px;
+          top: 10px;
+          position: absolute;
+          transition: all .2s;
+        }
+
+        &:hover svg {
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 0;
+  background-color: #149383;
+  align-items: center;
+
+  &-top {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-left {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 15px;
+
+      a {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 10px rgb(0, 0, 0, .6);
+        transition: all .2s;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+
+        svg {
+          margin-left: 1px;
+          width: 30px;
+          height: 30px;
+          color: white;
+        }
+      }
+
+      .lin {
+        background-color: #0A66C2;
+      }
+
+      .git {
+        background-color: #171515;
+      }
+    }
+
+    &-right {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      .phone,
+      .email,
+      .place {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        svg {
+          color: black;
+        }
+      }
+    }
+  }
+
+  .line {
+    width: 80%;
+    height: 1.2px;
+    background-color: black;
+    border-radius: 5px;
+  }
+
+  &-bottom {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+
+    svg {
+      animation: love .5s alternate infinite;
+    }
+  }
+}
+
+@keyframes love {
+  from {
+    transform: scale(.95);
+  }
+
+  to {
+    transform: scale(1.05);
+  }
+}
+
+// responsive on mobile
+@media screen and (max-width: 480px) {
+  .nav-bar {
+    justify-content: space-between;
+    padding: .9rem;
+
+    .nav-list {
+      position: absolute;
+      background-color: #eee;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 1rem;
+      padding: 1rem;
+      padding-left: 5rem;
+      border-radius: .5rem;
+      top: calc(100% + 5px);
+      right: 5px;
+      font-size: 1.2rem;
+      box-shadow: 0 0 10px -1px rgb(0, 0, 0, .5);
+      transform: scale(0);
+      transform-origin: top right;
+      transition: all .1s;
+    }
+
+    .active {
+      transform: scale(1);
+    }
+
+    .mobile-menu-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5px;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: rgb(0, 0, 0, .1);
+      }
+    }
+  }
+
+  .home {
+    flex-direction: column-reverse;
+    gap: 1.5rem;
+
+    &-left {
+
+      &-header {
+        font-size: 25px;
+
+        &-small {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    &-right {
+      width: 70vw;
+      height: 70vw;
+    }
+  }
+
+  .about {
+    padding: 20px 0;
+    gap: 20px;
+
+    &-header {
+      font-size: 30px;
+    }
+
+    &-content {
+      width: 90vw;
+      flex-direction: column;
+      gap: 20px;
+
+      img {
+        width: 60vw;
+      }
+    }
+  }
+
+  .work {
+    padding: 20px 0;
+    gap: 20px;
+
+    &-header {
+      font-size: 30px;
+    }
+
+    &-content {
+      width: 95vw;
+
+      .project {
+        flex-direction: column-reverse;
+        gap: 1rem;
+        border-radius: .5rem;
+
+        &-explain {
+          width: 100%;
+        }
+
+        &-img {
+          width: 100%;
+
+          img {
+            border-radius: .5rem;
+          }
+        }
+
+        &:nth-child(even) {
+          flex-direction: column-reverse;
+        }
+      }
+    }
+  }
+
+  .exp {
+    &-content {
+      width: 93vw;
+    }
+  }
+
+  .contact {
+    padding: 20px 0;
+    gap: 20px;
+
+    &-header {
+      font-size: 30px;
+    }
+
+    &-content {
+      width: 100%;
+      padding: 10px;
+      border-radius: 0;
+
+      img {
+        display: none;
+      }
+
+      form {
+        width: 100%;
+      }
+    }
+  }
+
+  .footer {
+    padding: 10px;
+    gap: 10px;
+
+    &-top {
+      width: 100%;
+      justify-content: space-between;
+      flex-direction: column;
+      align-items: flex-start;
+
+      &-left {
+        display: none;
+      }
+    }
+
+    .line {
+      width: 100%;
+    }
+  }
+}
+
+// responsive on tablet
+@media screen and (min-width: 481px) and (max-width: 1023px) {
+
+  .home {
+    flex-direction: column-reverse;
+  }
+
+  .about {
+    padding: 20px 0;
+    gap: 20px;
+
+    &-header {
+      font-size: 30px;
+    }
+
+    &-content {
+      width: 90vw;
+      gap: 20px;
+
+      img {
+        width: 40vw;
+      }
+    }
+  }
+
+  .work {
+    padding: 20px 0;
+    gap: 20px;
+
+    &-header {
+      font-size: 30px;
+    }
+
+    &-content {
+      width: 90vw;
+
+      .project {
+        flex-direction: column-reverse;
+
+        &-explain {
+          width: 100%;
+          align-items: center;
+          text-align: center;
+        }
+
+        &-img {
+          width: 100%;
+        }
+
+        &:nth-child(even) {
+          flex-direction: column-reverse;
+        }
+      }
+    }
+  }
+
+  .contact {
+    padding: 20px 0;
+    gap: 20px;
+
+    &-header {
+      font-size: 30px;
+    }
+  }
+}
